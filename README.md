@@ -20,5 +20,13 @@ Launch file `ar_maze.launch` includes:
 - `main_project` node with ar tags list parameter 
 - `nav_if_walls` node</br>
 
-### How to run the algorithm
+### How to run the algorithm on Robotont robot
+1.Build the package and source the catkin workspace:</br>
+    
+    catkin build
+    source devel/setup.bash
+2.Modify the list of ar tags for maze navigation in 8th line of `ar_maze.launch` (/launch/ar_maze.launch)</br>
+
+3.Launch the `ar_maze.launch` file:
+
     roslaunch ar_maze ar_maze.launch
