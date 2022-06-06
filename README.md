@@ -25,7 +25,7 @@ Launch file `ar_maze.launch` includes:
     
     catkin build
     source devel/setup.bash
-2.Modify the list of ar tags for maze navigation in 8th line of `ar_maze.launch` (/launch/ar_maze.launch)</br>
+2.Modify the list with ar tags for maze navigation in 8th line of `ar_maze.launch` (/launch/ar_maze.launch)</br>
 
 3.Launch the `ar_maze.launch` file:
 
