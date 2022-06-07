@@ -123,7 +123,7 @@ def rotation():
 def ar_demo():
         global marker_ids
         # Initialize this ROS node
-        rospy.init_node('main_project', anonymous=True)
+        rospy.init_node('nav_tags', anonymous=True)
         # get target marker id
         marker_ids = rospy.get_param('~marker_ids').split(",")
 
