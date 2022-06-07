@@ -17,7 +17,7 @@ The tasks for `nav_tags` node can be characterized as:
 - setting up the parameter "ar_present" to describe the state of the algorithm (robot found (navigates) ar tag/robot can`t find ar tag)
 
 #### NAV_IF_WALLS node
-`nav_if_walls` node subscribes to the "/scan_to_distance" topic. Once it receives that not "ar_present", it publishes messages under the topic "/cmd_vel" in such a way: robot does one full rotation and then moving forward a bit. If there is an obstacle robot rotates while not avoid it and continue motion. This appears constantly while not receiving parameter "ar_present"  as True from the `nav_tags` node.
+`nav_if_walls` node subscribes to the "/scan_to_distance" topic. Once it receives that not "ar_present", it publishes messages under the topic "/cmd_vel" in such a way: robot does one full rotation and then moving forward a bit. If there is an obstacle robot rotates while not avoid it and continue motion. This appears constantly while not receiving parameter "ar_present"  as True from the `nav_tags` node.</br>
 The tasks for `nav_if_walls` node are:
 - checking for the "ar_present" parameter to be False
 - setting up the robot angular and linear velocity to complete one full rotation and straight line motion
