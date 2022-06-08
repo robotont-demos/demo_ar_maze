@@ -10,7 +10,7 @@ However, for package functioning there are two default packages required: `ar_tr
 ### Nodes
 The main logic in algorithm that is enclosed in nodes `nav_tags` and `nav_if_walls` is looking for and approaching the ar tags one by one to complete the maze. In case of not finding the tag, robot starts rotation and motion avoiding obstacles in order to find the (next) ar tag. </br>
 #### NAV_TAGS node
-`nav_tags` node subscribes to the topic "/ar_pose_marker" and starts receiving information about ar tags. When it receives the tag with right id, it publishes robot's velocity under the topic "/cmd_vel" to approach this tag. If there is no ar tag present or it is present, but with wrong index, robot starts rotation. When completed one full rotation and still did not find the tag, `nav_tags` node set the parameter "ar_present" as True.</br>
+`nav_tags` node subscribes to the topic "/ar_pose_marker" and starts receiving information about ar tags. When it receives the tag with right id, it publishes robot's velocity under the topic "/cmd_vel" to approach this tag. If there is no ar tag present or it is present, but with wrong index, robot starts rotation. When completed one full rotation and still did not find the tag, `nav_tags` node set the parameter "ar_present" as False.</br>
 The tasks for `nav_tags` node can be characterized as:
 - identifying the ar tag with correct id for navigation while receiving messages of all found ar tags
 - setting up the robot linear and angular velocity that depends from position and orientation of correct ar tag found in order to approach it
