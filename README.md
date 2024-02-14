@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# ar_maze
+# demo_ar_maze
 **Package ar_maze aimed to provide robot navigation through the maze with ar tags. In the beginning robot is given by a list of ar tags. Reaching them one by one, robot successfully completes the maze.**
 
 **Package consists of**:
@@ -48,7 +47,4 @@ Launch file `ar_maze.launch` includes:
 
 3.Launch the `ar_maze.launch` file:
 
-    roslaunch ar_maze ar_maze.launch
-=======
-# demo_ar_maze
->>>>>>> 79f4c17e98b59c2577804a55c99afbfe5dd55c76
+    roslaunch demo_ar_maze ar_maze.launch
