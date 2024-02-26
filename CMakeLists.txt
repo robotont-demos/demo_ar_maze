@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(ar_maze)
+project(demo_ar_maze)
 
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs

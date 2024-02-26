@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>ar_maze</name>
+  <name>demo_ar_maze</name>
   <version>0.0.0</version>
   <description>The ar_maze package</description>
 
