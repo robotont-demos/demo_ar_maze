@@ -12,7 +12,7 @@
   <arg unless="$(eval eval_underscore_bypass == '')" name="prefix" default="$(arg __ns)/"/>
 
   <node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen">
-    <param name="marker_size"           type="double" value="18" /> <!-- difference lies in marker size, for gazebo world -->
+    <param name="marker_size"           type="double" value="28" /> <!-- difference lies in marker size, for gazebo world -->
     <param name="max_new_marker_error"  type="double" value="0.08" />
     <param name="max_track_error"       type="double" value="0.2" />
     <param name="output_frame"          type="string" value="$(arg prefix)camera_link" />
