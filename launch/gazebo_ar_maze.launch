@@ -5,7 +5,7 @@
     as eval may not contain double underscore expressions, a new argument (eval_underscore_bypass) is defined to by-pass this issue.
     when a namespace is specified, it is also converted into prefix with a trailing slash.
   -->
-  <arg name="marker_ids" default="2,1,5,4,3" />
+  <arg name="marker_ids" default="1,2,3,4,5" />
   <arg name="__ns" default=""/>
   <arg name="eval_underscore_bypass" value="$(arg __ns)"/>
   <arg if="$(eval eval_underscore_bypass == '')" name="prefix" default=''/>
