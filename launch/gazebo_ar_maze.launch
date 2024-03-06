@@ -20,8 +20,8 @@
     <remap from="camera_info"   to="camera/color/camera_info" />
   </node>
   <include file = "$(find robotont_laserscan_to_distance)/launch/distance_from_depth_image.launch"/>
-  <node name="nav_tags" pkg="ar_maze" type="nav_tags.py" output="screen">
+  <node name="nav_tags" pkg="demo_ar_maze" type="nav_tags.py" output="screen">
     <param name="marker_ids" type="string" value="$(arg marker_ids)" />
   </node>
-  <node name="nav_if_walls" pkg="ar_maze" type="nav_if_walls.py" output="screen"/>
+  <node name="nav_if_walls" pkg="demo_ar_maze" type="nav_if_walls.py" output="screen"/>
 </launch>
