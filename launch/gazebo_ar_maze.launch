@@ -1,27 +1,29 @@
 <?xml version="1.0" ?>
 <launch>
-  <!--
-    '__ns' is needed as an explicit argument because it does not propagate as an argument to the included launch files.
-    as eval may not contain double underscore expressions, a new argument (eval_underscore_bypass) is defined to by-pass this issue.
-    when a namespace is specified, it is also converted into prefix with a trailing slash.
-  -->
-  <arg name="marker_ids" default="1,2,3,4,5" />
+ <arg name="marker_size" default="28" />
+ <arg name="max_new_marker_error" default="0.08" />
+ <arg name="max_track_error" default="0.2" />
+ <arg name="cam_image_topic" default="/camera/color/image_raw" />
+ <arg name="cam_info_topic" default="/camera/color/camera_info" />
+ <arg name="output_frame" default="camera_link" />
+
+ <node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen">
+  <param name="marker_size"           type="double" value="$(arg marker_size)" />
+  <param name="max_new_marker_error"  type="double" value="$(arg max_new_marker_error)" />
+  <param name="max_track_error"       type="double" value="$(arg max_track_error)" />
+  <param name="output_frame"          type="string" value="$(arg output_frame)" />
+
+  <remap from="camera_image"  to="$(arg cam_image_topic)" />
+  <remap from="camera_info"   to="$(arg cam_info_topic)" />
+ </node>
+
+ <node name="demo_ar_maze" pkg="demo_ar_maze" type="demo_ar_maze_solver.py" output="screen">
+ </node>
+
+
   <arg name="__ns" default=""/>
   <arg name="eval_underscore_bypass" value="$(arg __ns)"/>
   <arg if="$(eval eval_underscore_bypass == '')" name="prefix" default=''/>
   <arg unless="$(eval eval_underscore_bypass == '')" name="prefix" default="$(arg __ns)/"/>
 
-  <node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen">
-    <param name="marker_size"           type="double" value="28" /> <!-- difference lies in marker size, for gazebo world -->
-    <param name="max_new_marker_error"  type="double" value="0.08" />
-    <param name="max_track_error"       type="double" value="0.5" />
-    <param name="output_frame"          type="string" value="$(arg prefix)camera_link" />
-    <remap from="camera_image"  to="camera/color/image_raw" />
-    <remap from="camera_info"   to="camera/color/camera_info" />
-  </node>
-  <include file = "$(find robotont_laserscan_to_distance)/launch/distance_from_depth_image.launch"/>
-  <node name="nav_tags" pkg="demo_ar_maze" type="nav_tags.py" output="screen">
-    <param name="marker_ids" type="string" value="$(arg marker_ids)" />
-  </node>
-  <node name="nav_if_walls" pkg="demo_ar_maze" type="nav_if_walls.py" output="screen"/>
 </launch>
