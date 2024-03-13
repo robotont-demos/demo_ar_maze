@@ -17,7 +17,7 @@
   <remap from="camera_info"   to="$(arg cam_info_topic)" />
  </node>
 
- <node name="demo_ar_maze" pkg="demo_ar_maze" type="demo_ar_maze_solver.py" output="screen">
+ <node name="demo_ar_maze" pkg="demo_ar_maze" type="gazebo_ar_maze_solver.py" output="screen">
  </node>
 
 
